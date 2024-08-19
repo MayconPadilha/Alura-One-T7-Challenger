@@ -1,10 +1,97 @@
 body{
-
+    margin: 0px;
+    padding: 0px;
+    background-color: #E5E5E5;
 }
 
 main{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-around;
+    margin: 40px;
+
+}
+
+.criptografia{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+}
+
+textarea{
+    height: 100vh;
+    background-color: #E5E5E5;
+    color: #0A3871;
+    font-size: 32px;
+    border: none;
+}
+
+.aviso{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+a{
+ color: #495057;
+}
+
+button{
+    width: 328px;
+    height: 67px;
+    font-size: 16px;
+    border-radius: 24px;
+}
+
+.btn__criptografar{
+    background-color: #0A3871;
+    color: #FFFFFF;
+}
+
+.btn__descriptografar{
+    background-color: #D8DFE8;
+    color: #0A3871;
+}
+
+#semMensagem{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    background-color: #FFFFFF;
+    width: 285px;
+    height: 85vh;
+    border-radius: 32px;
+    align-items: center;
+    text-align: center;
+}
+
+#semMensagem img{
+    width: 60%;
+}
+
+#semMensagem p{
+    margin: 4px;
+}
+
+#semMensagem p:nth-of-type(1){
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#semMensagem p:nth-of-type(2){
+    font-size: 16px;
+}
+
+#textoTradutor{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60vh;
+    height: 85vh;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 0px 0px 40px 0px;
+    border-radius: 32px;
 }
