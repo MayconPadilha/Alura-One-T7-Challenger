@@ -40,3 +40,9 @@ function descriptografar(){
     console.log(mensagem.value)
     textArea.value = "";
 }
+
+function copiar() {
+    const textoCopiado = document.querySelector(".mensagem");
+    textoCopiado.select();
+    document.execCommand('copy');
+}  
