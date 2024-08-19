@@ -1,41 +1,42 @@
+const textArea = document.querySelector(".text-area");
+const mensagem = document.querySelector(".mensagem");
 
 function criptografar(){
     document.getElementById('semMensagem').style.display = "none";
-
     let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
-    // console.table(matrizCodigo);
 
-    let textoEnviado = document.getElementById('textoDescriptografado').value;
-    textoEnviado = textoEnviado.toLowerCase();
+    let stringEncriptada = document.getElementById('textoDescriptografado').value;
+    stringEncriptada = stringEncriptada.toLowerCase();
 
     for(let i = 0; i < matrizCodigo.length; i++){
-        if(textoEnviado.includes(matrizCodigo[i][0])){
-            textoEnviado = textoEnviado.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1]);
+        if(stringEncriptada.includes(matrizCodigo[i][0])){
+            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1]);
         }
     }    
     
-    let textoTradutor = document.getElementById('textoTradutor');
     document.getElementById('textoTradutor').style.display = "flex";
 
-    textoTradutor.innerHTML = `<p>${textoEnviado}</p><button>Copiar</button>`;
+    mensagem.value = stringEncriptada;
+    console.log(mensagem.value)
+    textArea.value = "";
 }
 
 function descriptografar(){
     document.getElementById('semMensagem').style.display = "none";
-
     let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
 
-    let textoEnviado = document.getElementById('textoDescriptografado').value;
-    textoEnviado = textoEnviado.toLowerCase();
+    let stringDescriptada = document.getElementById('textoDescriptografado').value;
+    stringDescriptada = stringDescriptada.toLowerCase();
 
     for(let i = 0; i < matrizCodigo.length; i++){
-        if(textoEnviado.includes(matrizCodigo[i][1])){
-            textoEnviado = textoEnviado.replaceAll(matrizCodigo[i][1],matrizCodigo[i][0]);
+        if(stringDescriptada.includes(matrizCodigo[i][1])){
+            stringDescriptada = stringDescriptada.replaceAll(matrizCodigo[i][1],matrizCodigo[i][0]);
         }
     }
     
-    let textoTradutor = document.getElementById('textoTradutor');
     document.getElementById('textoTradutor').style.display = "flex";
 
-    textoTradutor.innerHTML = `<p>${textoEnviado}</p><button>Copiar</button>`;
+    mensagem.value = stringDescriptada;
+    console.log(mensagem.value)
+    textArea.value = "";
 }

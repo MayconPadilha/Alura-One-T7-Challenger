@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Encriptador</title>
+    <link rel="shortcut icon" href="https://www.alura.com.br/assets/favicon.1720710817.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <main>
-        <img src="./assets/Logo.png" alt="logo alura">
+        <header>
+            <img class="logoAlura" src="./assets/Logo.png" alt="logo alura">
+        </header>
+        
         <section class="criptografia">
-            <!-- <input type="textarea" placeholder="Digite seu texto"> -->
-            <textarea name="" id="textoDescriptografado" placeholder="Digite seu texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores perferendis enim laudantium provident expedita sint ut aspernatur sunt sed dicta quidem iste inventore fugit corporis sit rerum nulla, minus ab.</textarea>
-            <div>
-                <div class="aviso">
-                    <img src="./assets/bi_exclamation-circle-fill.png" alt="">
-                    <p>letras minúsculas e sem acento.</p>
-                </div>
-                
-                <button class="btn__criptografar" onclick="criptografar()">Criptografar</button>
-                <button class="btn__descriptografar" onclick="descriptografar()">Descriptografar</button>
+            <textarea class="text-area" cols="41" rows="4" id="textoDescriptografado" placeholder="Digite seu texto"></textarea>
+
+            <div class="aviso">
+                <img src="./assets/bi_exclamation-circle-fill.png" alt="">
+                <p>Apenas letras minúsculas e sem acento.</p>
+            </div>
+
+            <div class="botoes">
+                <button class="btn-criptografar" onclick="criptografar()">Criptografar</button>
+                <button class="btn-descriptografar" onclick="descriptografar()">Descriptografar</button>
             </div>
         </section>
 
-        <section class="mensagem">
+        <section class="bloco-tradutor">
             <div id="semMensagem">
-                <img src="./assets/High quality products 1 1.png" alt="imagem nenhuma mensagem encontrada">
+                <img src="./assets/boneco.png" alt="imagem nenhuma mensagem encontrada">
                 <p>Nenhuma mensagem encontrada</p>
                 <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
             </div>
 
             <div id="textoTradutor" style="display: none;">
+                <textarea class="mensagem"></textarea>
+                <button class="btn-copiar" onclick="copiar()">Copiar</button>
             </div>
         </section>
     </main>    
