@@ -3,10 +3,9 @@ const mensagem = document.querySelector(".mensagem");
 
 function criptografar(){
     document.getElementById('semMensagem').style.display = "none";
-    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
 
-    let stringEncriptada = document.getElementById('textoDescriptografado').value;
-    stringEncriptada = stringEncriptada.toLowerCase();
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    let stringEncriptada = document.getElementById('textoDescriptografado').value.toLowerCase();
 
     for(let i = 0; i < matrizCodigo.length; i++){
         if(stringEncriptada.includes(matrizCodigo[i][0])){
@@ -16,17 +15,15 @@ function criptografar(){
     
     document.getElementById('textoTradutor').style.display = "flex";
 
-    mensagem.value = stringEncriptada;
-    console.log(mensagem.value)
+    mensagem.textContent = stringEncriptada;
     textArea.value = "";
 }
 
 function descriptografar(){
     document.getElementById('semMensagem').style.display = "none";
-    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
 
-    let stringDescriptada = document.getElementById('textoDescriptografado').value;
-    stringDescriptada = stringDescriptada.toLowerCase();
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    let stringDescriptada = document.getElementById('textoDescriptografado').value.toLowerCase();
 
     for(let i = 0; i < matrizCodigo.length; i++){
         if(stringDescriptada.includes(matrizCodigo[i][1])){
@@ -36,13 +33,22 @@ function descriptografar(){
     
     document.getElementById('textoTradutor').style.display = "flex";
 
-    mensagem.value = stringDescriptada;
-    console.log(mensagem.value)
+    mensagem.textContent = stringDescriptada;
     textArea.value = "";
 }
 
 function copiar() {
-    const textoCopiado = document.querySelector(".mensagem");
-    textoCopiado.select();
-    document.execCommand('copy');
-}  
+    const textoCopiado = document.querySelector('.mensagem');
+    const range = document.createRange();
+    range.selectNodeContents(textoCopiado);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    try {
+        document.execCommand('copy');
+        // alert('Texto copiado!');
+    } catch (err) {
+        console.error('Falha ao copiar: ', err);
+    }
+}
