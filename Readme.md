@@ -1,3 +1,6 @@
+
+![badge](https://github.com/user-attachments/assets/9be55238-2c75-4268-8823-d02adf7be9ad)
+
 # Criptografia de Textos - Challenger T7 ONE
 
 Bem-vindo ao desafio de criptografia de textos! Este projeto tem como objetivo criar uma aplicação que permite a criptografia e descriptografia de mensagens, facilitando a troca de informações secretas utilizando uma chave específica de substituição de caracteres.
