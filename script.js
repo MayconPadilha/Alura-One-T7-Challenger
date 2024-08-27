@@ -47,7 +47,6 @@ function copiar() {
 
     try {
         document.execCommand('copy');
-        // alert('Texto copiado!');
     } catch (err) {
         console.error('Falha ao copiar: ', err);
     }
